@@ -5,6 +5,6 @@
  * @param {!Object} res HTTP response context.
  */
 
-exports.meteo = (req, res) => {
+exports.air_quality = (req, res) => {
   res.end("Hello World!")
 }

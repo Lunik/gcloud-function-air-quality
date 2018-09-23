@@ -5,6 +5,17 @@
  * @param {!Object} res HTTP response context.
  */
 
+const AirQuality = require('./lib/air_quality.js')
+
 exports.air_quality = (req, res) => {
-  res.end("Hello World!")
+	let location = req.query.location || 'lyon'
+	let responseFormat = req.query.format || 'text'
+	
+	let air = new AirQuality(location)
+
+	air.getReport(responseFormat).then(res.json).catch((err) => {
+		console.log(err)
+	    res.status(500)
+	    res.json(JSON.stringify(err))
+	})
 }

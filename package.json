@@ -1,5 +1,8 @@
 {
   "name": "sample-http",
   "version": "0.0.1",
-  "dependencies": {}
+  "dependencies": {
+    "request-promise": "^4.2.2",
+    "x-ray": "^2.3.3"
+  }
 }
